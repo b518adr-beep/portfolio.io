@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- بيانات الميتا الأساسية وتهيئة محركات البحث (SEO) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أبو ساهر الشافعي | مطور ويب ومصمم واجهات مستخدم ومستشار تقني</title>
+  
+  <meta name="description" content="الموقع ومعرض الأعمال الشخصي للمطور أبو ساهر الشافعي - متخصص في تطوير واجهات الويب، تصميم تجربة المستخدم (UI/UX)، والاستشارات التقنية والذكاء الاصطناعي.">
+  <meta name="keywords" content="أبو ساهر الشافعي, مطور ويب, مصمم واجهات, UI/UX, فرونت إند, HTML, CSS, JavaScript, React, استشارات تقنية, ذكاء اصطناعي">
+  <meta name="author" content="أبو ساهر الشافعي">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph للشبكات الاجتماعية (Social Sharing) -->
+  <meta property="og:title" content="أبو ساهر الشافعي | معرض الأعمال الشخصي">
+  <meta property="og:description" content="أصنع تجارب رقمية مميزة وأحوّل الأفكار إلى مواقع وتطبيقات احترافية تجمع بين جمال التصميم وسرعة الأداء.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/avatar.svg">
+  <meta property="og:locale" content="ar_AR">
+
+  <!-- استدعاء الخطوط العربية الاحترافية (Cairo & Tajawal) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- ملف التنسيقات الخارجي (CSS النقي فقط) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. شريط التنقل العلوي الثابت (Sticky Navbar)
+       ========================================================================= -->
+  <header class="navbar" id="top">
+    <div class="container nav-container">
+      <!-- الشعار / الاسم التجاري -->
+      <a href="#top" class="nav-logo" aria-label="الصفحة الرئيسية">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <div class="logo-text">أبو ساهر <span>الشافعي</span></div>
+      </a>
+
+      <!-- زر القائمة للأجهزة الذكية (Pure CSS Checkbox Toggle) -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle-input" aria-label="تبديل القائمة">
+      <label for="menu-toggle" class="menu-toggle-btn" aria-label="زر القائمة">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- قائمة الروابط -->
+      <nav class="nav-menu">
+        <a href="#hero" class="nav-link">الرئيسية</a>
+        <a href="#about" class="nav-link">من أنا</a>
+        <a href="#skills" class="nav-link">المهارات</a>
+        <a href="#portfolio" class="nav-link">أعمالي</a>
+        <a href="#contact" class="nav-link">تواصل معي</a>
+      </nav>
+
+      <!-- زر الإجراء السريع ولوحة التحكم -->
+      <div class="nav-actions">
+        <button type="button" class="btn-admin" onclick="openAdminModal()" title="إدارة وإضافة الأعمال">
+          <span>⚙️ لوحة التحكم</span>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm">تواصل الآن</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         2. الصفحة الرئيسية (Hero Section)
+         ========================================================================= -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <!-- المحتوى النصي -->
+        <div class="hero-content">
+          <!-- شارة التوفر للعمل -->
+          <div class="hero-badge">
+            <span class="badge-pulse"></span>
+            <span>متاح للمشاريع الجديدة والعمل الحر</span>
+          </div>
+
+          <p class="hero-greeting">أهلاً بك، أنا</p>
+          <h1 class="hero-name"><span class="name-gradient">أبو ساهر الشافعي</span></h1>
+          
+          <div class="hero-role">
+            <span>مطور ويب</span>
+            <span class="dot">•</span>
+            <span>مصمم واجهات مستخدم</span>
+            <span class="dot">•</span>
+            <span>مستشار تقني</span>
+          </div>
+
+          <p class="hero-description">
+            أصنع تجارب رقمية مميزة، وأحوّل الأفكار إلى مواقع وتطبيقات احترافية تجمع بين جمال التصميم وقوة الأداء وسهولة الاستخدام للارتقاء بأعمالك إلى آفاق جديدة.
+          </p>
+
+          <!-- أزرار الدعوة للإجراء -->
+          <div class="hero-cta-group">
+            <a href="#portfolio" class="btn btn-primary">
+              <span>استعرض أعمالي</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>تواصل معي</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 2L11 13"></path>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </a>
+          </div>
+
+          <!-- إحصائيات سريعة -->
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <div class="stat-number">+5 <span>سنوات</span></div>
+              <div class="stat-label">خبرة برمجية وتقنية</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">+40 <span>مشروعاً</span></div>
+              <div class="stat-label">مكتمل بجودة عالية</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100<span>%</span></div>
+              <div class="stat-label">التزام وسرعة تسليم</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- العمود البصري التفاعلي مع الصورة الشخصية -->
+        <div class="hero-visual">
+          <div class="visual-glow"></div>
+          <div class="visual-card">
+            <div class="avatar-wrapper">
+              <img src="images/my-photo.png" alt="أبو ساهر الشافعي" class="avatar-image">
+            </div>
+            <div class="avatar-badge-float">
+              <span>📍</span>
+              <span>المملكة العربية السعودية</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. قسم من أنا (About Me Section)
+         ========================================================================= -->
+    <section id="about" class="section">
+      <div class="container">
+        <!-- عنوان القسم -->
+        <div class="section-header">
+          <span class="section-tag">من أنا</span>
+          <h2 class="section-title">نبذة عن مسيرتي <span>ورؤيتي التقنية</span></h2>
+          <p class="section-description">
+            أجمع بين التفكير الإبداعي والخبرة البرمجية العميقة لتقديم حلول رقمية تلبي طموحات رواد الأعمال والشركات.
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <!-- النص التعريفي والركائز -->
+          <div class="about-text">
+            <h3>شغف بالابتكار وبناء تجارب ويب من الطراز الأول</h3>
+            <p>
+              أنا <strong>أبو ساهر الشافعي</strong>، مطور واجهات أمامية ومصمم تجارب مستخدم ومستشار تقني. على مدار سنوات من العمل في القطاع البرمجي، طورت العديد من المنصات والمواقع المبتكرة التي تركز على سرعة الاستجابة وجمال التصميم وبساطة الاستخدام.
+            </p>
+            <p>
+              أولي اهتماماً خاصاً بالتقنيات الحديثة، والذكاء الاصطناعي، والتحول الرقمي للأعمال التجارية، حيث أعمل دائماً على تطبيق أفضل المعايير العالمية في بناء الأكواد وتأمين الأنظمة وتسهيل وصول المستخدمين للمعلومة في أسرع وقت.
+            </p>
+
+            <!-- الميزات الأربعة السريعة -->
+            <div class="about-highlights">
+              <div class="highlight-box">
+                <div class="highlight-icon">⚡</div>
+                <div>
+                  <h4>أداء فائق وسرعة البرق</h4>
+                  <p>تحسين سرعة التحميل وتجاوب سلس للغاية.</p>
+                </div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-icon">🎨</div>
+                <div>
+                  <h4>تصاميم إبداعية فريدة</h4>
+                  <p>واجهات عصرية مريحة للعين ومدروسة سلوكياً.</p>
+                </div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-icon">🤖</div>
+                <div>
+                  <h4>دمج الذكاء الاصطناعي</h4>
+                  <p>حلول ذكية لأتمتة المهام وتطوير العمليات.</p>
+                </div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-icon">🛡️</div>
+                <div>
+                  <h4>أكواد آمنة ومعيارية</h4>
+                  <p>بنية Semantic نظيفة وسهلة التطوير مستقبلاً.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- بطاقات مجالات التخصص -->
+          <div class="specialty-grid">
+            <!-- بطاقة 1 -->
+            <div class="specialty-card">
+              <div class="specialty-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div class="specialty-content">
+                <h4>تطوير واجهات الويب (Frontend Development)</h4>
+                <p>بناء واجهات تفاعلية متكاملة ومتوافقة مع مختلف الأجهزة والمتصفحات باستخدام أحدث المعايير البرمجية.</p>
+              </div>
+            </div>
+
+            <!-- بطاقة 2 -->
+            <div class="specialty-card">
+              <div class="specialty-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <div class="specialty-content">
+                <h4>تصميم واجهات وتجربة المستخدم (UI/UX Design)</h4>
+                <p>دراسة رحلة المستخدم وتصميم واجهات أنيقة وعصرية تزيد من تفاعل العملاء وترفع نسب التحويل والمبيعات.</p>
+              </div>
+            </div>
+
+            <!-- بطاقة 3 -->
+            <div class="specialty-card">
+              <div class="specialty-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div class="specialty-content">
+                <h4>الذكاء الاصطناعي والتحول الرقمي</h4>
+                <p>توظيف أدوات ونماذج الذكاء الاصطناعي وأتمتة الإجراءات لمساعدة الشركات في خفض التكاليف وتسريع النمو.</p>
+              </div>
+            </div>
+
+            <!-- بطاقة 4 -->
+            <div class="specialty-card">
+              <div class="specialty-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                </svg>
+              </div>
+              <div class="specialty-content">
+                <h4>الاستشارات التقنية وهندسة المشاريع</h4>
+                <p>تقديم المشورة الفنية الدقيقة لاختيار التقنيات الأنسب، وتحسين البنية التحتية البرمجية، ورفع كفاءة النظم.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. قسم المهارات (Skills Section)
+         ========================================================================= -->
+    <section id="skills" class="section">
+      <div class="container">
+        <!-- عنوان القسم -->
+        <div class="section-header">
+          <span class="section-tag">مهاراتي</span>
+          <h2 class="section-title">المهارات <span>والتقنيات المتقنة</span></h2>
+          <p class="section-description">
+            أدواتي البرمجية وتقنياتي التي أستخدمها في بناء منصات وتطبيقات رقمية متكاملة وقوية.
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- مهارة 1: HTML5 -->
+          <article class="skill-card">
+            <div class="skill-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 3l1.5 15L12 21l6.5-3L20 3H4z"></path>
+                <path d="M16 8H8v4h7v4l-3 1-3-1v-2"></path>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h3 class="skill-name">HTML5</h3>
+                <span class="skill-badge">متقدم</span>
+              </div>
+              <p class="skill-desc">هيكلة صفحات دلالية Semantic، متوافقة مع معايير الوصول العالمية وتهيئة محركات البحث (SEO).</p>
+            </div>
+          </article>
+
+          <!-- مهارة 2: CSS3 -->
+          <article class="skill-card">
+            <div class="skill-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 3l1.5 15L12 21l6.5-3L20 3H4z"></path>
+                <path d="M8 8h8l-1 8-3 1-3-1"></path>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h3 class="skill-name">CSS3</h3>
+                <span class="skill-badge">متقدم</span>
+              </div>
+              <p class="skill-desc">تصاميم عصرية بأنظمة Flexbox وGrid، وحركات Transitions وAnimations سلسة بدون مكتبات ثقيلة.</p>
+            </div>
+          </article>
+
+          <!-- مهارة 3: JavaScript -->
+          <article class="skill-card">
+            <div class="skill-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <path d="M8 17v-4"></path>
+                <path d="M16 17v-7c0-1.5-1.5-1.5-2-1.5s-2 0-2 1.5"></path>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h3 class="skill-name">JavaScript</h3>
+                <span class="skill-badge">احترافي</span>
+              </div>
+              <p class="skill-desc">تطوير وظائف تفاعلية ديناميكية ومعالجة البيانات والربط مع الـ APIs بأداء عالي.</p>
+            </div>
+          </article>
+
+          <!-- مهارة 4: React -->
+          <article class="skill-card">
+            <div class="skill-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="12" rx="10" ry="4"></ellipse>
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"></ellipse>
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"></ellipse>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h3 class="skill-name">React</h3>
+                <span class="skill-badge">احترافي</span>
+              </div>
+              <p class="skill-desc">بناء تطبيقات الصفحة الواحدة (SPA)، والمكونات القابلة لإعادة الاستخدام وإدارة الحالة بكفاءة.</p>
+            </div>
+          </article>
+
+          <!-- مهارة 5: TypeScript -->
+          <article class="skill-card">
+            <div class="skill-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <path d="M8 10h4m-2 0v7"></path>
+                <path d="M14 14.5c.5.5 1 .8 1.8.8 1.2 0 1.7-.6 1.7-1.3 0-1.8-3.5-1.2-3.5-3 0-.9.8-1.5 1.9-1.5.8 0 1.4.3 1.8.7"></path>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h3 class="skill-name">TypeScript</h3>
+                <span class="skill-badge">متقدم</span>
+              </div>
+              <p class="skill-desc">كتابة أكواد برمجية صارمة النوع ومحمية من أخطاء التشغيل وسهلة الصيانة في المشاريع الكبرى.</p>
+            </div>
+          </article>
+
+          <!-- مهارة 6: تصميم UI/UX -->
+          <article class="skill-card">
+            <div class="skill-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"></path>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h3 class="skill-name">تصميم UI/UX</h3>
+                <span class="skill-badge">إبداعي</span>
+              </div>
+              <p class="skill-desc">تصميم واجهات وتجارب استخدام عصرية تركز على سهولة الوصول وعلم نفس الألوان والتناسق البصري.</p>
+            </div>
+          </article>
+
+          <!-- مهارة 7: Responsive Web Design -->
+          <article class="skill-card">
+            <div class="skill-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <line x1="8" y1="20" x2="16" y2="20"></line>
+                <line x1="12" y1="16" x2="12" y2="20"></line>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h3 class="skill-name">Responsive Design</h3>
+                <span class="skill-badge">متطابق 100%</span>
+              </div>
+              <p class="skill-desc">ملاءمة كاملة مع شاشات الهواتف الذكية والأجهزة اللوحية والحواسيب المكتبية بدقة متناهية.</p>
+            </div>
+          </article>
+
+          <!-- مهارة 8: الذكاء الاصطناعي -->
+          <article class="skill-card">
+            <div class="skill-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V11h3a3 3 0 0 1 3 3v2h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1H1a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h1v-2a3 3 0 0 1 3-3h3V9.5C6.8 8.8 6 7.5 6 6a4 4 0 0 1 4-4z"></path>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h3 class="skill-name">الذكاء الاصطناعي (AI)</h3>
+                <span class="skill-badge">حلول ذكية</span>
+              </div>
+              <p class="skill-desc">توظيف نماذج الذكاء الاصطناعي التوليدي، معالجة البيانات، وبناء واجهات ذكية تواكب المستقبل.</p>
+            </div>
+          </article>
+
+          <!-- مهارة 9: الأمن السيبراني -->
+          <article class="skill-card">
+            <div class="skill-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <circle cx="12" cy="11" r="2"></circle>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h3 class="skill-name">الأمن السيبراني</h3>
+                <span class="skill-badge">حماية وأمان</span>
+              </div>
+              <p class="skill-desc">تطبيق أفضل ممارسات الحماية، حماية المدخلات، وتأمين بيانات المستخدمين من الثغرات الشائعة.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. قسم المشاريع (Portfolio Section)
+         ========================================================================= -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <!-- عنوان القسم -->
+        <div class="section-header">
+          <span class="section-tag">معرض الأعمال</span>
+          <h2 class="section-title">نماذج من <span>أبرز مشاريعي</span></h2>
+          <p class="section-description">
+            مشاريع حقيقية تم تنفيذها بأعلى معايير الإتقان لتلبية احتياجات العملاء وتحقيق أهدافهم التجارية.
+          </p>
+          <div style="margin-top: 16px;">
+            <button type="button" class="btn-admin" onclick="openAdminModal()">
+              <span>⚙️ إضافة وتعديل الأعمال من لوحة التحكم</span>
+            </button>
+          </div>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid">
+          <!-- مشروع 1: متجر التقنية والأناقة -->
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="images/project1.svg" alt="متجر التقنية والأناقة للمنتجات الذكية" loading="lazy">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">CSS3</span>
+                <span class="project-tag">متجر إلكتروني</span>
+                <span class="project-tag">UI/UX</span>
+              </div>
+              <h3 class="project-title">متجر التقنية والأناقة</h3>
+              <p class="project-desc">
+                متجر إلكتروني متكامل لبيع الإلكترونيات والمنتجات الذكية، يتميز بواجهة تفاعلية أنيقة وتجربة تسوق سلسة مع سلة مشتريات وتصميم متجاوب بالكامل.
+              </p>
+              <div class="project-footer">
+                <a href="#contact" class="project-link">
+                  <span>معاينة المشروع</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- مشروع 2: متجر مراعي تيماء -->
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="images/project2.svg" alt="منصة متجر مراعي تيماء للذبائح الطازجة" loading="lazy">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">CSS3</span>
+                <span class="project-tag">منصة تجارية</span>
+                <span class="project-tag">RTL Web</span>
+              </div>
+              <h3 class="project-title">متجر مراعي تيماء</h3>
+              <p class="project-desc">
+                منصة إلكترونية متخصصة في بيع وطلب الذبائح البلدية الطازجة، تتيح للعميل اختيار نوع الذبيحة، طريقة التقطيع، التغليف، وتتبع التوصيل المبرد المباشر.
+              </p>
+              <div class="project-footer">
+                <a href="#contact" class="project-link">
+                  <span>معاينة المشروع</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- مشروع 3: نظام إدارة الموظفين HRMS -->
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="images/project3.svg" alt="نظام إدارة الموظفين HRMS لوحة تحكم سحابية" loading="lazy">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">CSS Grid</span>
+                <span class="project-tag">Dashboard</span>
+                <span class="project-tag">HRMS</span>
+              </div>
+              <h3 class="project-title">نظام إدارة الموظفين HRMS</h3>
+              <p class="project-desc">
+                واجهة لوحة تحكم إدارية متطورة لتنظيم بيانات الموظفين، متابعة الحضور والانصراف، مسيرات الرواتب وطلبات الإجازات، مع رسوم بيانية ومؤشرات أداء واضحة.
+              </p>
+              <div class="project-footer">
+                <a href="#contact" class="project-link">
+                  <span>معاينة المشروع</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- مشروع 4: صفحات هبوط احترافية -->
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="images/project4.svg" alt="صفحات هبوط تسويقية احترافية فائقة التحويل" loading="lazy">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">CSS3</span>
+                <span class="project-tag">Landing Page</span>
+                <span class="project-tag">High Conversion</span>
+              </div>
+              <h3 class="project-title">صفحات هبوط احترافية</h3>
+              <p class="project-desc">
+                حزمة واجهات تسويقية مصممة خصيصاً لمضاعفة معدلات التحويل للمنتجات والخدمات، متوافقة مع محركات البحث SEO وسريعة التحميل لجميع منصات الإعلانات.
+              </p>
+              <div class="project-footer">
+                <a href="#contact" class="project-link">
+                  <span>معاينة المشروع</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. قسم تواصل معي (Contact Section)
+         ========================================================================= -->
+    <section id="contact" class="section">
+      <div class="container">
+        <!-- عنوان القسم -->
+        <div class="section-header">
+          <span class="section-tag">تواصل معي</span>
+          <h2 class="section-title">لنبدأ في بناء <span>مشروعك القادم</span></h2>
+          <p class="section-description">
+            هل لديك فكرة مشروع ترغب في تحويلها إلى واقع رقمي، أو تحتاج لاستشارة تقنية متخصصة؟ يسعدني دائماً تواصلك.
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- قنوات التواصل المباشرة -->
+          <div class="contact-info-panel">
+            <!-- الموقع الجغرافي -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>الموقع الجغرافي</h4>
+                <span>📍 المملكة العربية السعودية</span>
+              </div>
+            </div>
+
+            <!-- البريد الإلكتروني -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>البريد الإلكتروني المباشر</h4>
+                <a href="mailto:badr.vip.517@gmail.com">badr.vip.517@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- واتساب والهاتف -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>واتساب / اتصال مباشر</h4>
+                <a href="https://wa.me/966577205172" target="_blank" rel="noopener noreferrer">+966 57 720 5172</a>
+              </div>
+            </div>
+
+            <!-- حساب LinkedIn -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>حساب لينكد إن المهني</h4>
+                <a href="https://linkedin.com/in/abusahir" target="_blank" rel="noopener noreferrer">linkedin.com/in/abusahir</a>
+              </div>
+            </div>
+
+            <!-- أزرار وسائل التواصل الاجتماعي -->
+            <div class="social-links">
+              <a href="https://wa.me/966577205172" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              </a>
+              <a href="mailto:badr.vip.517@gmail.com" class="social-btn" aria-label="Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </a>
+              <a href="https://linkedin.com/in/abusahir" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="https://github.com/abusahir" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- نموذج إرسال رسالة (HTML Semantic Form) -->
+          <div class="contact-form-panel">
+            <h3>أرسل لي رسالة مباشرة</h3>
+            <p>املأ البيانات أدناه وسأقوم بالرد عليك خلال أقل من 24 ساعة بإذن الله.</p>
+
+            <form action="mailto:badr.vip.517@gmail.com" method="post" enctype="text/plain">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">الاسم الكامل</label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="مثال: أحمد عبد الله" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">البريد الإلكتروني</label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="name@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">عنوان الرسالة / موضوع المشروع</label>
+                <input type="text" id="subject" name="subject" class="form-input" placeholder="مثال: طلب تطوير موقع تجاري" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">تفاصيل المشروع أو الاستفسار</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="اكتب نبذة عن فكرتك أو استفسارك هنا..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>إرسال الرسالة الآن</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       7. تذييل الموقع (Footer)
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#top" class="nav-logo">
+            <div class="logo-icon">&lt;/&gt;</div>
+            <div class="logo-text">أبو ساهر <span>الشافعي</span></div>
+          </a>
+          <p class="footer-desc">
+            مطور ويب ومصمم واجهات مستخدم ومستشار تقني. أصنع تجارب رقمية مميزة وأحوّل الأفكار الطموحة إلى واقع ملموس يحقق النجاح والتفوق.
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <a href="#hero" class="footer-link">الرئيسية</a>
+          <a href="#about" class="footer-link">من أنا</a>
+          <a href="#skills" class="footer-link">المهارات</a>
+          <a href="#portfolio" class="footer-link">أعمالي</a>
+          <a href="#contact" class="footer-link">تواصل معي</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 أبو ساهر الشافعي. جميع الحقوق محفوظة.</p>
+        <a href="#top" class="back-to-top" aria-label="العودة إلى أعلى الصفحة">
+          <span>العودة للأعلى</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       8. نافذة تسجيل الدخول الأمني (Admin Login Modal)
+       ========================================================================= -->
+  <div id="admin-login-modal" class="admin-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <div class="login-card">
+      <button type="button" class="admin-close-btn" onclick="closeLoginModal()" style="position: absolute; top: 18px; left: 18px;" aria-label="إغلاق">✕</button>
+      
+      <div class="login-lock-icon">🔐</div>
+      <h2 id="login-title" class="login-title">التحقق الأمني للمشرف</h2>
+      <p class="login-subtitle">لوحة التحكم وإدارة الأعمال محمية بكلمة مرور. يرجى إدخال كلمة المرور للمتابعة:</p>
+
+      <div id="admin-login-error" class="admin-error-box"></div>
+
+      <form id="admin-login-form">
+        <div class="admin-form-group">
+          <div class="input-password-wrap">
+            <input type="password" id="admin-login-password" class="admin-input" placeholder="أدخل كلمة المرور هنا..." autocomplete="current-password" required>
+            <button type="button" class="btn-toggle-eye" onclick="togglePasswordVisibility('admin-login-password', this)" title="إظهار / إخفاء كلمة المرور">👁️</button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+          <span>دخول لوحة التحكم</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+        </button>
+      </form>
+
+      <div class="login-hint-box">
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       9. لوحة تحكم إدارة المحتوى والمشاريع (Content Management Modal)
+       ========================================================================= -->
+  <div id="admin-modal" class="admin-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+    <div class="admin-modal-container">
+      <!-- ترويسة اللوحة -->
+      <div class="admin-modal-header">
+        <div class="admin-header-title">
+          <h2 id="admin-title">⚙️ لوحة إدارة المحتوى والأعمال</h2>
+          <span class="admin-count-badge" id="admin-projects-count">4 أعمال</span>
+          <span class="admin-user-badge">👑 وضع المسؤول</span>
+        </div>
+        <div class="admin-header-controls">
+          <button type="button" class="btn-logout" onclick="logoutAdmin()" title="تسجيل الخروج وقفل اللوحة">
+            <span>🚪 تسجيل الخروج</span>
+          </button>
+          <button type="button" class="admin-close-btn" onclick="closeAdminModal()" aria-label="إغلاق اللوحة">✕</button>
+        </div>
+      </div>
+
+      <!-- جسم اللوحة -->
+      <div class="admin-modal-body">
+        <div class="admin-grid">
+          <!-- العمود الأيمن: نموذج الإضافة والتعديل -->
+          <div class="admin-form-column">
+            <h3 class="admin-section-heading" id="admin-form-title">إضافة عمل جديد إلى المعرض</h3>
+            <form id="admin-project-form">
+              <div class="admin-form-group">
+                <label for="project-title" class="admin-label">اسم المشروع / العمل *</label>
+                <input type="text" id="project-title" class="admin-input" placeholder="مثال: منصة حجوزات ذكية" required>
+              </div>
+
+              <div class="admin-form-group">
+                <label for="project-desc" class="admin-label">وصف المشروع المختصر *</label>
+                <textarea id="project-desc" class="admin-textarea" placeholder="اكتب نبذة عن فكرة المشروع والوظائف الأساسية..." required></textarea>
+              </div>
+
+              <div class="admin-form-group">
+                <label for="project-tags" class="admin-label">التقنيات المستخدمة (مفصولة بفواصل)</label>
+                <input type="text" id="project-tags" class="admin-input" placeholder="مثال: HTML5, CSS3, JavaScript, React">
+                <div class="admin-help-text">اكتب أسماء التقنيات مفصولة بفواصل ( , ) لتظهر كشارات ملونة.</div>
+              </div>
+
+              <div class="admin-form-group">
+                <label for="project-link" class="admin-label">رابط معاينة المشروع (اختياري)</label>
+                <input type="text" id="project-link" class="admin-input" placeholder="https://yourproject.com أو #contact">
+              </div>
+
+              <div class="admin-form-group">
+                <label class="admin-label">صورة المشروع (رفع ملف من الجهاز أو رابط)</label>
+                <div class="image-selector-wrap">
+                  <div class="file-upload-box">
+                    <input type="file" id="project-image-file" accept="image/*">
+                    <div class="upload-icon-text">
+                      <span>📁 اضغط لرفع صورة من جهازك</span>
+                    </div>
+                  </div>
+                  <div class="image-live-preview-box">
+                    <img id="image-live-preview" src="images/project1.svg" alt="معاينة الصورة">
+                  </div>
+                </div>
+                <div style="margin-top: 10px;">
+                  <input type="text" id="project-image-url" class="admin-input" placeholder="أو الصق مسار/رابط صورة خارجي (images/project1.svg)">
+                </div>
+              </div>
+
+              <div class="admin-form-actions">
+                <button type="submit" id="form-submit-btn" class="btn btn-primary" style="flex-grow: 1;">
+                  <span>حفظ المشروع في المعرض</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+                <button type="button" id="cancel-edit-btn" class="btn-cancel-edit">
+                  <span>إلغاء التعديل</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- العمود الأيسر: قائمة المشاريع الحالية -->
+          <div class="admin-list-column">
+            <h3 class="admin-section-heading">
+              <span>الأعمال الحالية في المعرض</span>
+            </h3>
+            <div id="admin-projects-list" class="admin-projects-list">
+              <!-- يتم توليد البطاقات ديناميكياً بواسطة script.js -->
+            </div>
+
+            <!-- قسم تغيير كلمة المرور الآمن -->
+            <details class="admin-password-accordion">
+              <summary class="admin-password-summary">
+                <span>🔑 تغيير كلمة مرور لوحة التحكم</span>
+                <span>▼</span>
+              </summary>
+              <div class="admin-password-body">
+                <form id="admin-password-form">
+                  <div class="admin-form-group">
+                    <label for="pwd-current" class="admin-label">كلمة المرور الحالية</label>
+                    <div class="input-password-wrap">
+                      <input type="password" id="pwd-current" class="admin-input" placeholder="كلمة المرور الحالية" required>
+                      <button type="button" class="btn-toggle-eye" onclick="togglePasswordVisibility('pwd-current', this)">👁️</button>
+                    </div>
+                  </div>
+                  <div class="admin-form-group">
+                    <label for="pwd-new" class="admin-label">كلمة المرور الجديدة</label>
+                    <div class="input-password-wrap">
+                      <input type="password" id="pwd-new" class="admin-input" placeholder="كلمة المرور الجديدة (4 أحرف فأكثر)" required>
+                      <button type="button" class="btn-toggle-eye" onclick="togglePasswordVisibility('pwd-new', this)">👁️</button>
+                    </div>
+                  </div>
+                  <div class="admin-form-group">
+                    <label for="pwd-confirm" class="admin-label">تأكيد كلمة المرور الجديدة</label>
+                    <div class="input-password-wrap">
+                      <input type="password" id="pwd-confirm" class="admin-input" placeholder="أعد كتابة كلمة المرور الجديدة" required>
+                      <button type="button" class="btn-toggle-eye" onclick="togglePasswordVisibility('pwd-confirm', this)">👁️</button>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-secondary btn-sm" style="width: 100%;">
+                    <span>تحديث وحفظ كلمة المرور</span>
+                  </button>
+                </form>
+              </div>
+            </details>
+
+            <div class="admin-reset-box">
+              <button type="button" id="btn-reset-defaults" class="btn-reset-defaults" title="إعادة تعيين القائمة إلى المشاريع الأربعة الأصلية">
+                🔄 استعادة المشاريع الافتراضية
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- الزر العائم للوصول السريع إلى لوحة التحكم -->
+  <button type="button" class="admin-floating-btn" onclick="openAdminModal()" aria-label="لوحة إدارة المحتوى">
+    <span>B</span>
+  </button>
+
+  <!-- سكربت التخزين المحلي وإدارة المحتوى المباشرة -->
+  <script src="script.js"></script>
+
+</body>
+</html>
