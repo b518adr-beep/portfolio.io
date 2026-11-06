@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#38BDF8" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="500" height="500" rx="36" fill="url(#avatarBg)"/>
+  <circle cx="250" cy="250" r="180" fill="url(#glowGrad)"/>
+
+  <!-- Geometric Tech Pattern -->
+  <circle cx="250" cy="250" r="160" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="6 6"/>
+  <circle cx="250" cy="250" r="130" fill="none" stroke="url(#accentGrad)" stroke-width="2" opacity="0.4"/>
+
+  <!-- Code Window Mockup in Center -->
+  <g filter="url(#softShadow)">
+    <rect x="90" y="100" width="320" height="230" rx="16" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+    <!-- Window Header -->
+    <rect x="90" y="100" width="320" height="38" rx="16" fill="#0F172A"/>
+    <circle cx="120" cy="119" r="6" fill="#EF4444"/>
+    <circle cx="140" cy="119" r="6" fill="#F59E0B"/>
+    <circle cx="160" cy="119" r="6" fill="#10B981"/>
+    <text x="380" y="124" fill="#94A3B8" font-family="sans-serif" font-size="12" text-anchor="end" dir="rtl">&lt;developer.config /&gt;</text>
+
+    <!-- Code Lines -->
+    <text x="120" y="170" fill="#38BDF8" font-family="monospace" font-size="15" font-weight="bold">const developer = {</text>
+    <text x="140" y="200" fill="#94A3B8" font-family="monospace" font-size="14">name: <tspan fill="#FCD34D">'أبو ساهر الشافعي'</tspan>,</text>
+    <text x="140" y="230" fill="#94A3B8" font-family="monospace" font-size="14">role: <tspan fill="#34D399">'Web Dev &amp; UI/UX'</tspan>,</text>
+    <text x="140" y="260" fill="#94A3B8" font-family="monospace" font-size="14">passion: <tspan fill="#F472B6">'Creating Digital Art'</tspan>,</text>
+    <text x="140" y="290" fill="#94A3B8" font-family="monospace" font-size="14">status: <tspan fill="#38BDF8">'Available for hire'</tspan></text>
+    <text x="120" y="315" fill="#38BDF8" font-family="monospace" font-size="15" font-weight="bold">};</text>
+  </g>
+
+  <!-- Floating Badges -->
+  <g transform="translate(60, 320)" filter="url(#softShadow)">
+    <rect width="170" height="64" rx="16" fill="#0F172A" stroke="#3B82F6" stroke-width="1.5"/>
+    <circle cx="36" cy="32" r="16" fill="#3B82F6" fill-opacity="0.2"/>
+    <path d="M28 32 L34 38 L44 26" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="62" y="28" fill="#F8FAFC" font-family="sans-serif" font-size="12" font-weight="bold">مشاريع ناجحة</text>
+    <text x="62" y="48" fill="#38BDF8" font-family="sans-serif" font-size="14" font-weight="bold">+40 مشروع</text>
+  </g>
+
+  <g transform="translate(270, 350)" filter="url(#softShadow)">
+    <rect width="170" height="64" rx="16" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+    <circle cx="36" cy="32" r="16" fill="#10B981" fill-opacity="0.2"/>
+    <polygon points="36,22 39.5,29.5 47,30.5 41.5,36 43,43.5 36,39.5 29,43.5 30.5,36 25,30.5 32.5,29.5" fill="#10B981"/>
+    <text x="62" y="28" fill="#F8FAFC" font-family="sans-serif" font-size="12" font-weight="bold">سنوات الخبرة</text>
+    <text x="62" y="48" fill="#10B981" font-family="sans-serif" font-size="14" font-weight="bold">+5 سنوات احتراف</text>
+  </g>
+
+  <!-- Decorative Orbiting Nodes -->
+  <circle cx="85" cy="180" r="7" fill="#38BDF8"/>
+  <circle cx="415" cy="220" r="9" fill="#3B82F6"/>
+  <circle cx="380" cy="80" r="5" fill="#10B981"/>
+</svg>
